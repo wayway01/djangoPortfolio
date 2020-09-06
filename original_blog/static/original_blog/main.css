@@ -269,3 +269,30 @@ a.article-title:hover {
 .custom-checkbox-label:hover {
     opacity: 0.5;
 }
+
+/*About*/
+.about-this-blog {
+  margin: 10px 3% 50px 3%;
+}
+
+.about-ourselves {
+  margin: 10px 3% 50px 3%;
+}
+
+.wayway-introduction > img.article-img {
+  float:left;
+}
+
+.wayway-introduction > .text-introduction {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.myway-introduction > img.article-img {
+  float:left;
+}
+
+.,yway-introduction > .text-introduction {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
