@@ -1,5 +1,5 @@
 {% extends "original_blog/base.html" %}
-{% load crispy_forms_tags %}
+{% load myfilters %}
 
 {% block content %}
     <div class="content-section">
@@ -7,8 +7,20 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">投稿フォーム</legend>
-                {{ form|crispy }}
-                <div class="form-group">
+                <div class="post-items">
+                    公開：
+                    {{ form.is_public|addclass:'post-is_public'}}
+                    タイトル：
+                    {{ form.title|addclass:'post-title' }}
+                    本文：
+                    {{ form.content|addclass:'post-content'  }}
+                </div>
+                <div class="post-tags mb-4">
+                    タグ：<br>
+                    {{ form.tags|addclass:'post-tags custom-checkbox' }}
+                </div>
+
+                <div class="post-submit">
                     <button class="btn btn-outline-info" type="submit">投稿</button>
                 </div>
             </fieldset>

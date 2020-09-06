@@ -1,0 +1,20 @@
+{% extends "original_blog/base.html" %}
+{% load myfilters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="content-section">
+        <form method = "POST" id="comment-form">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">入力フォーム</legend>
+                <div class="comment-items">
+                    {{ form|crispy }}
+                <div class="post-submit">
+                    <button class="btn btn-outline-info" type="submit">投稿</button>
+                    <a class="btn btn-outline-info" href="{% url 'post_detail' post.pk %}">投稿せずに戻る</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock content %}

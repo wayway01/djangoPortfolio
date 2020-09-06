@@ -36,6 +36,28 @@ ul {
   margin-bottom: 20px;
 }
 
+.site-footer {
+  text-align: center;
+  color: #999999;
+  padding: 10px 20px;
+  border-top: 1px solid #eeeeee;
+}
+
+/*記事*/
+.tag {
+    display: inline-block;
+    border-radius: 10px;
+    background: #afeeee;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.25s;
+    padding: 1px 5px;
+    cursor: pointer;
+    font-size: 10px;
+    margin: 2px;
+}
+
 .article-title {
   color: #444444;
 }
@@ -72,6 +94,27 @@ a.article-title:hover {
   vertical-align: middle;
 }
 
+.article-author {
+  text-decoration: none;
+  color: #4169e1;  
+}
+
+.article-author:hover {
+  text-decoration: none;
+  color: #333;  
+}
+
+.article-expansion {
+  text-decoration: none;
+  color: #4169e1;
+}
+
+.article-expansion:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+/*アカウント*/
 .account-img {
   height: 125px;
   width: 125px;
@@ -81,4 +124,148 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+/*タグ一覧*/
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-name {
+  display: inline-block;
+  border-radius: 10px;
+  background: #afeeee;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+  padding: 1px 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 2px;
+}
+
+
+/*コメント欄*/
+.section-title {
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.comment {
+  margin: 10px 0 0px 3%;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.comment > h3, .reply > h3 {
+  font-size: 20px;
+  margin-bottom: 2px;
+  color: #888888;
+}
+
+.comment-text {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.reply {
+  margin: 10px 0 20px 6%;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.reply-text {
+  padding-bottom: 10px;
+}
+
+
+/*投稿フォーム*/
+.post-items {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.post-is_public {
+  margin: 10px 3%;
+  width: 15px;
+  height: 15px;
+}
+
+.post-title {
+  width: 94%;
+  margin: 10px 3%;
+}
+.post-title input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 94%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: #aaaaaa;
+  border: 1px solid #1b2538;
+  border-radius: 4px;
+}
+
+.post-title input[type='text']:focus {
+  border: 1px solid #da3c41;
+  outline: none;
+  box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+}
+
+.post-content {
+  width: 94%;
+  margin: 10px 3%;
+}
+.post-content input[type='text'] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 94%;
+  padding: 0.3em;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: #aaaaaa;
+  border: 1px solid #1b2538;
+  border-radius: 4px;
+}
+
+.post-content input[type='text']:focus {
+  border: 1px solid #da3c41;
+  outline: none;
+  box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+}
+
+.post-submit {
+  margin: 3% 10px;
+}
+
+
+
+/*チェックボックス*/
+.custom-checkbox {
+    display: none;
+}
+
+.custom-checkbox:checked + .custom-checkbox-label {
+    background: #00809d;
+    color: #fff;
+}
+
+.custom-checkbox-label {
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    border: solid 1px #ccc;
+    transition: 0.25s;
+    padding: 6px 18px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 2px 3%;
+}
+
+.custom-checkbox-label:hover {
+    opacity: 0.5;
 }

@@ -1,0 +1,24 @@
+{% extends "original_blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="content-section">
+        <legend class="border-bottom mb-2">タグ一覧</legend>
+            <div class="tag-list mb-4">
+                {% for tag in tag_list %}
+                    <a class="tag-name" data-pk ="{{ tag.pk }}" href="{% url 'tag_post' tag.name %}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+
+        {% if user.is_authenticated %}
+        <form method = "POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-2">タグの追加</legend>
+                {{ form|crispy }}
+                <button class="btn btn-outline-info" type="submit">追加</button>
+            </fieldset>
+        </form>
+        {% endif %}
+    </div>
+{% endblock content %}

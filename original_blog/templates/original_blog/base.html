@@ -12,9 +12,9 @@
         <link rel="stylesheet" type="text/css" href="{% static 'original_blog/main.css' %}">
 
         {% if title %}
-            <title> コンサルタント/プログラマのブログ - {{ title }}</title>
+            <title> 交換日記 - {{ title }}</title>
         {% else %}
-            <title> コンサルタント/プログラマのブログ </title>
+            <title> 交換日記 </title>
         {% endif %}
     </head>
 
@@ -22,14 +22,15 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="{% url 'blog_home' %}">コンサルタント/プログラマのブログ</a>
+                <a class="navbar-brand mr-4" href="{% url 'blog_home' %}">交換日記</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{% url 'blog_home' %}">ホーム</a>
+                        <a class="nav-item nav-link" href="{% url 'blog_home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'blog_about' %}">About</a>
+                        <a class="nav-item nav-link" href="{% url 'tag_manage' %}">Tags</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
@@ -39,7 +40,7 @@
                             <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>                        
                         {% else %}
                             <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                            <!-- <a class="nav-item nav-link" href="{% url 'register' %}">Register</a> -->
                         {% endif %}
                     </div>
                 </div>
@@ -49,7 +50,7 @@
 
     <main role="main" class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 {% if messages %}
                     {% for message in messages %}
                         <div class="alert alert-{{ message.tags }}">
@@ -59,7 +60,7 @@
                 {% endif %}
                 {% block content %}{% endblock %}
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="content-section">
                     <h3>Our Sidebar</h3>
                     <p class="text-muted">Information. Information. Information. Information.
@@ -71,9 +72,12 @@
                         </ul>
                     </p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
+    <footer class="site-footer">
+        <p>&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by wayway and myway.</p>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

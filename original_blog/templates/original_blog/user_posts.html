@@ -1,5 +1,6 @@
 {% extends "original_blog/base.html" %}
 {% block content %}
+
     <h1 class="mb-3"> {{view.kwargs.username}}の投稿 ({{ page_obj.paginator.count }})</h1>
     {% for post in post_list %}
         <article class="media content-section">
@@ -8,9 +9,12 @@
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'user_post' post.author.username %}">{{ post.author }}</a>
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                {% for tag in post.tags.all %}
+                    <a class="tag" data-pk ="{{ tag.pk }}" href="{% url 'tag_post' tag.name %}">{{ tag.name }}</a>
+                {% endfor %}
                 </div>
                 <h2><a class="article-title" href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
-                <p class="article-content">{{ post.content }}</p>
+                <p class="article-content">{{ post.content|truncatechars:300 }}<a class="article-expansion mr-2" href="{% url 'post_detail' post.id %}"> more</a> </p>
             </div>
         </article>
     {% endfor %}
