@@ -69,11 +69,12 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
+  word-break: break-all;
 }
 
 .article-img {
-  height: 65px;
-  width: 65px;
+  height: min(13%, 50px);
+  width: min(15%, 55px);
   margin-right: 16px;
 }
 
@@ -116,8 +117,8 @@ a.article-title:hover {
 
 /*アカウント*/
 .account-img {
-  height: 125px;
-  width: 125px;
+  height: min(13%, 50px);
+  width: min(15%, 55px);
   margin-right: 20px;
   margin-bottom: 16px;
 }
